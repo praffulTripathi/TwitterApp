@@ -1,0 +1,16 @@
+*{
+  font-family: 'Segoe UI', Roboto, Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  text-decoration: none;
+  background-color: #000;
+  color: #FFF;
+}
+a{
+  cursor: pointer;
+}
+.App{
+  display:flex;
+  flex-direction: row;
+}
