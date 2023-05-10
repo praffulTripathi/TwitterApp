@@ -1,8 +1,8 @@
 import ProfileLogo from "./ProfileLogo";
-import likesIcon from "../assets/likesIcon.svg";
-import commentsIcon from "../assets/commentIcon.svg";
-import retweetIcon from "../assets/retweetIcon.svg";
-import tweetReachIcon from "../assets/tweetReachIcon.svg"
+import likesIcon from "../../assets/likesIcon.svg";
+import commentsIcon from "../../assets/commentIcon.svg";
+import retweetIcon from "../../assets/retweetIcon.svg";
+import tweetReachIcon from "../../assets/tweetReachIcon.svg"
 
 function TweetList({tweets}){
     return(
