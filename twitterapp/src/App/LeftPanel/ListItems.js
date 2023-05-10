@@ -1,10 +1,10 @@
-import twitterLogo from "../assets/twitterIcon.svg"
-import home from "../assets/twitterHome.svg";
-import bookmarks from "../assets/twitterBookmark.svg";
-import explore from "../assets/twitterExplore.svg";
-import messages from "../assets/twitterMessages.svg";
-import notifications from "../assets/twitterNotifications.svg";
-import profile from "../assets/twitterProfile.svg";
+import twitterLogo from "../../assets/twitterIcon.svg"
+import home from "../../assets/twitterHome.svg";
+import bookmarks from "../../assets/twitterBookmark.svg";
+import explore from "../../assets/twitterExplore.svg";
+import messages from "../../assets/twitterMessages.svg";
+import notifications from "../../assets/twitterNotifications.svg";
+import profile from "../../assets/twitterProfile.svg";
 
 function ListItems(){
     const leftPanelListItems=[{

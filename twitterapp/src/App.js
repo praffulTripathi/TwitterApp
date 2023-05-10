@@ -3,9 +3,9 @@ import './App.css';
 import './styles/leftPanel.css'
 import './styles/middlePanel.css'
 import './styles/rightPanel.css'
-import LeftPanel from './App/LeftPanel';
-import MiddlePanel from './App/MiddlePanel';
-import RightPanel from './App/RightPanel';
+import LeftPanel from './App/LeftPanel/LeftPanel.js'
+import MiddlePanel from './App/MiddlePanel/MiddlePanel.js'
+import RightPanel from './App/RightPanel/RightPanel.js'
 
 function App() {
   return (
