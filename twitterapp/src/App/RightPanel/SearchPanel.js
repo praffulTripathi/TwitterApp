@@ -1,6 +1,6 @@
 import searchIcon from "../../assets/searchIcon.svg"
-function SearchPanel(){
-    return(
+function SearchPanel() {
+    return (
         <div className="SearchTwitter">
             <span className="searchIconSpan">
                 <img src={searchIcon} className="searchIcon"></img>

@@ -4,11 +4,11 @@ import commentsIcon from "../../assets/commentIcon.svg";
 import retweetIcon from "../../assets/retweetIcon.svg";
 import tweetReachIcon from "../../assets/tweetReachIcon.svg"
 
-function TweetList({tweets}){
-    return(
-        tweets.map(tweet=>{
-            return(
-                <div className="tweetList"> 
+function TweetList({ tweets }) {
+    return (
+        tweets.map(tweet => {
+            return (
+                <div className="tweetList" key={tweet.key}>
                     <ProfileLogo />
 
                     <div className="tweetBodyAndStats">

@@ -1,5 +1,5 @@
-function StickyBar(){
-    return(
+function StickyBar() {
+    return (
         <div className="stickyBar">
             <div className="homeText">
                 Home
@@ -8,14 +8,14 @@ function StickyBar(){
                 <div className="yourTweets centerText maxHeight">
                     <div className="text">
                         <span className="textDesc">For You</span>
-                        <div className="bottomPill">  
+                        <div className="bottomPill">
                         </div>
                     </div>
                 </div>
                 <div className="followingTweets centerText maxHeight">
                     <div className="text">
                         <span className="textDesc isNotActive">Following</span>
-                        <div className="bottomPill">  
+                        <div className="bottomPill">
                         </div>
                     </div>
                 </div>

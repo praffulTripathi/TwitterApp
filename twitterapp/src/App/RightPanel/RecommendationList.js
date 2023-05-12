@@ -1,11 +1,11 @@
-function RecommendationList({recommendation}){
-    return(
-        recommendation.map((suggestion)=>[
-            <div className="followSuggestions rightPanelColor">
+function RecommendationList({ recommendation }) {
+    return (
+        recommendation.map((suggestion) => {
+            <div className="followSuggestions rightPanelColor" key={suggestion.key}>
                 <div className="profileLogo rightPanelColor noMargin">
-                <img src={suggestion.profileIcon}></img>   
+                    <img src={suggestion.profileIcon}></img>
                 </div>
-                
+
                 <div className="whoToFollow rightPanelColor">
                     <div className="profileName rightPanelColor">
                         {suggestion.profileName}
@@ -18,7 +18,7 @@ function RecommendationList({recommendation}){
                     Follow
                 </div>
             </div>
-    ])
+        })
     )
 }
 export default RecommendationList;

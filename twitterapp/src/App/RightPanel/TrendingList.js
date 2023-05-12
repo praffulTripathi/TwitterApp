@@ -1,7 +1,7 @@
-function TrendingList({trending}){
-    return(
-        trending.map((topic)=>[
-            <div className="trendingListItems">
+function TrendingList({ trending }) {
+    return (
+        trending.map((topic) => [
+            <div className="trendingListItems" key={topic.key}>
                 <div className="category rightPanelColor">
                     {topic.category}
                 </div>

@@ -1,9 +1,16 @@
+import { useContext } from 'react';
 import ListItems from "./ListItems";
 import TweetButton from "./TweetButton";
 import UserInfo from "./UserInfo";
-function LeftPanel(){
+import { APIResponseContext } from '../Providers/APIContext';
+function LeftPanel() {
+    
+    console.log("Render Left Panel");
 
-    return(
+    // const {apiResponse} = useContext(APIResponseContext);
+    // console.log("Inside Left Panel: "+apiResponse);
+
+    return (
         <div className="leftPanel">
             <div className="left-panel-list">
                 <ListItems />

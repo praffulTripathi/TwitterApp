@@ -1,0 +1,16 @@
+:root{
+    --twitter-blue: rgb(26, 140, 216);
+    --twitter-dark-mode: #000;
+    --twitter-list-dark-bkg : rgb(22,24,28);
+    --twitter-grey: rgb(113, 118, 123);
+    --hover-bkg-color: #2b2929;
+    --large-text: 24px;
+    --bold-text: 700;
+    --regular-text: 14px;
+    --medium-text: 18px;
+    --dark-theme-text-color: #FFF;
+}
+.root{
+    background-color: var(--twitter-dark-mode);
+    color: #FFF;
+}

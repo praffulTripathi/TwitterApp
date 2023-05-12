@@ -1,5 +1,5 @@
-function UserInfo(){
-    return(
+function UserInfo() {
+    return (
         <a className="userInfo" href="/temp">
             <div className="userNameIcon">
                 P
@@ -13,7 +13,7 @@ function UserInfo(){
                 </div>
             </div>
             <div className="hamburgerMenu">
-                    ...
+                ...
             </div>
         </a>
     )

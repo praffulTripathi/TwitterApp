@@ -1,15 +1,15 @@
 import ProfileLogo from "./ProfileLogo";
 
-function ComposeTweet({addTweetFunction}){
-    const addNewTweet = (event) =>{
+function ComposeTweet({ addTweetFunction }) {
+    const addNewTweet = (event) => {
         let tweetTextArea = document.querySelector(".tweetTextInputBox");
         let tweetText = tweetTextArea.value;
-        if(tweetText!=""){
+        if (tweetText != "") {
             addTweetFunction(tweetText);
-            tweetTextArea.value="";
+            tweetTextArea.value = "";
         }
     }
-    return(
+    return (
         <div className="composeTweet">
             <ProfileLogo />
             <div className="tweetText">
