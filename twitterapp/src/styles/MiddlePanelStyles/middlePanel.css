@@ -177,6 +177,7 @@
     color: var(--twitter-grey);
 } */
 
+
 .isLiked > *{
     color: red;
     fill: red;
@@ -196,7 +197,7 @@
 .text{
     display: flex;
     justify-content: center;
-    align-items: center;;
+    align-items: center;
 }
 .tweetStatIcon{
     width: 30px;
