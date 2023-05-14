@@ -1,44 +1,26 @@
 import TrendingList from "./TrendingList";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { APIResponseContext } from '../Providers/APIContext';
 
 function Trending() {
-    const [trendingTweets, updateTrending] = useState([
-        {
-            key: 0,
-            category: 'Trending in India',
-            tweetTitle: '#SupremeCourt',
-            trendingReason: '10.4k Tweets'
-        },
-        {
-            key: 1,
-            category: 'Sports\t.\tTrending',
-            tweetTitle: 'Gujrat Titans',
-            trendingReason: 'Trending with #AavaDe #ipl'
-        },
-        {
-            key: 2,
-            category: 'Business & Finance\t.\t Trending',
-            tweetTitle: '#SupremeCourt',
-            trendingReason: '10.4k Tweets'
-        },
-        {
-            key: 3,
-            category: 'Indian Premier League\t.\tTrending',
-            tweetTitle: 'MSDhoni',
-            trendingReason: 'Trending with #ChennaiSuperKings #ipl'
-        }
-    ])
+    
+    const [trendingData, setTrendingData] = useState(null);
+    const apiResponse = useContext(APIResponseContext);
+
+    if (apiResponse != null && trendingData == null) {
+        setTrendingData(apiResponse["trendingData"]);
+    }
 
 
-
-    return (
-        <div className="trending rightPanelColor">
-            <div className="whatsHappening rightPanelColor">What's happening</div>
-            <TrendingList trending={trendingTweets} />
-            <div className="showMore rightPanelColor">
-                <a className="showMoreAnchor rightPanelColor">Show more</a>
+    if (trendingData != null)
+        return (
+            <div className="trending rightPanelColor">
+                <div className="whatsHappening rightPanelColor">{trendingData.title}</div>
+                <TrendingList trending={trendingData} />
+                <div className="showMore rightPanelColor">
+                    <a className="showMoreAnchor rightPanelColor">Show more</a>
+                </div>
             </div>
-        </div>
-    )
+        )
 }
 export default Trending;

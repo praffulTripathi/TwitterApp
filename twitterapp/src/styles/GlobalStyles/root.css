@@ -14,3 +14,6 @@
     background-color: var(--twitter-dark-mode);
     color: #FFF;
 }
+span{
+    color: var(--twitter-grey);
+}

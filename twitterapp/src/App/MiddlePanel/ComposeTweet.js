@@ -15,7 +15,6 @@ function ComposeTweet({ addTweetFunction }) {
         let tweetTextArea = document.querySelector(".tweetTextInputBox");
         let tweetText = tweetTextArea.value;
         if (tweetText != "") {
-            console.log("Tweet Text: "+tweetText);
             addTweetFunction(tweetText);
             tweetTextArea.value = "";
         }

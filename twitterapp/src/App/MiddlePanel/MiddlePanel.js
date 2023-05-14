@@ -10,41 +10,16 @@ const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept"
 
 function MiddlePanel() {
 
-
-    // USE headerData, tweetThreads, tweetButton
-
-    const [tweetList, setTweetList] = useState(null);
+    const [tweetList, setTweetList] = useState([]);
     const apiResponse = useContext(APIResponseContext);
 
-    if (apiResponse != null && tweetList == null) {
-        console.log(apiResponse["tweetThreads"]);
+    if (apiResponse != null && tweetList.length == 0) {
         setTweetList(apiResponse["tweetThreads"]);
     }
-
 
     const format = (num) => {
         return Math.abs(num) > 999 ? Math.sign(num) * ((Math.abs(num) / 1000).toFixed(1)) + 'k' : Math.sign(num) * Math.abs(num)
     }
-
-    if (tweetList != null) {
-        tweetList.map(tweetThread => {
-            tweetThread.map(tweet => {
-                tweet["replies"] = format(tweet["replies"]);
-                tweet["reTweets"] = format(tweet["reTweets"]);
-                tweet["views"] = format(tweet["views"]);
-                tweet["likes"] = format(tweet["likes"]);
-                tweet["tweetTime"] = months[new Date(tweet["tweetTime"]).getMonth()] + ' ' + new Date(tweet["tweetTime"]).getDate();
-            })
-        })
-    }
-
-    useEffect(() => {
-        console.log("Tweet List: ");
-        console.log(tweetList);
-    }, [tweetList]);
-
-
-
 
     const addTweetFunction = (description) => {
         let newTweet = [{
@@ -57,22 +32,38 @@ function MiddlePanel() {
             likes: 0
         }]
         setTweetList(tweetList => [newTweet, ...tweetList]);
-        console.log(tweetList);
     };
 
+    useEffect(() => {
+        console.log(tweetList);
+    }, [tweetList]);
 
+    const likeTweet = (event) => {
+        let id = event.target.parentNode.parentNode.parentNode.parentNode.id;
+        setTweetList(prevTweets => {
+            const newTweets = [...prevTweets];
+            newTweets[id][0] = { ...newTweets[id][0], likes: newTweets[id][0].likes+1 };
+            return newTweets;
+        });
+    }
+    const dislikeTweet = (event) => {
+        let id = event.target.parentNode.parentNode.parentNode.parentNode.id;
+        setTweetList(prevTweets => {
+            const newTweets = [...prevTweets];
+            newTweets[id][0] = { ...newTweets[id][0], likes: newTweets[id][0].likes-1 };
+            return newTweets;
+        });
+    }
 
-
-
-    if (tweetList != null)
-        return (
-            <div className="middlePanel">
-                <StickyBar />
-                <ComposeTweet addTweetFunction={addTweetFunction} />
-                <div className="tweetListOuter">
-                    <TweetList tweetList={tweetList} />
+        if (tweetList != null)
+            return (
+                <div className="middlePanel">
+                    <StickyBar />
+                    <ComposeTweet addTweetFunction={addTweetFunction} />
+                    <div className="tweetListOuter">
+                        <TweetList tweetList={tweetList} likeTweet={likeTweet} dislikeTweet={dislikeTweet} />
+                    </div>
                 </div>
-            </div>
-        )
-}
-export default MiddlePanel;
+            )
+    }
+    export default MiddlePanel;

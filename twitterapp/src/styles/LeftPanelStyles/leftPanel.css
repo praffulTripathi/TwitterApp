@@ -68,12 +68,14 @@
   bottom: 24px;
   right: 12px;
   min-width: 300px;
-  padding-left: 20px;
+  height: 60px;
 }
 
 .userInfo {
-  min-height: 50px;
+  height: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
   border-radius: 32px;
   padding: 5px 5px;
@@ -93,7 +95,7 @@
 }
 
 .userDetails {
-  min-width: 70%;
+  min-width: 50%;
   font-size: var(--regular-text);
   padding: 0 12px;
   display: flex;
@@ -112,6 +114,7 @@
 
 .hamburgerMenu {
   min-width: 10%;
+  height: 100%;
   display: flex;
   justify-content: center;
 }
