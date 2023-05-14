@@ -1,4 +1,4 @@
-function UserInfo() {
+function UserInfo({apiResponse}) {
     return (
         <a className="userInfo" href="/temp">
             <div className="userNameIcon">

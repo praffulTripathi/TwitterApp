@@ -15,8 +15,7 @@ function FollowRecommendation() {
             userName: "@SrBachchan"
         }
     ])
-    useEffect(()=>console.log("Mounting FollowRecommendation"),[]);
-    useEffect(()=>console.log("Re-Rendering FollowRecommendations"),[recommendation]);
+    
     return (
         <div className="recommendations rightPanelColor">
             <div className="whatsHappening rightPanelColor noTopMargin" >Who To Follow</div>
