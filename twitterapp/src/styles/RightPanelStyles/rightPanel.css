@@ -1,39 +1,41 @@
 .rightPanel{
     width: 30%;
+    height: 100vh;
+    min-width: 350px;
+    margin-left: 12px;
+    margin-top: 8px;
+    font-size: var(--regular-text);
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    font-weight: 700;
-    margin-left: 12px;
-    position: relative;
-    height: 100vh;
-    margin-top: 8px;
 }
 .SearchTwitter{
     font-size:0;
     padding: 10px 10px;
-    min-width: 300px;
+    min-width: 320px;
     border-radius: 25px;
-    background-color: rgb(22,24,28);
+    background-color: var(--twitter-list-dark-bkg);
     display:flex;
     flex-direction: row;
 }
+.SearchTwitter > *{
+    background-color: var(--twitter-list-dark-bkg);
+}
 .searchIconSpan{
     width: 10%;
-    background-color: rgb(22,24,28);
 }
 .searchInput{
     width: 90%;
     height: 100%;
     border:none;
     outline: none;
-    background-color: rgb(22,24,28);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .searchInput::placeholder{
-    color: rgb(113, 118, 123);
+    color: var(--twitter-grey);
     font-size: 18px;
 }
 .searchIcon{
@@ -46,11 +48,12 @@
     margin-top: 12px;
     padding: 10px 10px;
     border-radius: 15px;
-    min-width:300px;
+    min-width: 320px;
 }
 
 .whatsHappening{
-    font-size: 24px;
+    font-size: var(--large-text);
+    font-weight: var(--bold-text);
     margin-bottom: 10px;
 }
 
@@ -62,26 +65,24 @@
     margin: 10px 0;
 }
 .rightPanelColor{
-    background-color: rgb(22,24,28);
+    background-color: var(--twitter-list-dark-bkg);
 }
 .category, .trendingReason, .showMore, .showMoreAnchor, .userNameCard{
-    color: rgb(113, 118, 123);
-    font-size: 12px;
-    font-weight: normal;
+    color: var(--twitter-grey);
 }
 .tweetTitle, .profileName{
     color: #FFF;
-    font-weight: 700;
-    font-size: 14px;
+    font-size: var(--medium-text);
+    font-weight: var(--bold-text);
 }
 .showMore{
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 .showMoreAnchor{
     height: 100%;
-    color: rgb(26, 140, 216);
-    font-size: 14px;
-    font-weight: 700;
+    color: var(--twitter-blue);
+    font-weight: var(--bold-text);
 }
 
 
@@ -92,7 +93,7 @@
 
 .whoToFollow{
     margin-top: 10px;
-    padding: 0 10px;
+    margin: 10px 10px;
 }
 
 .noTopMargin{
@@ -108,15 +109,15 @@
     margin-left: 15px;
     width: 80px;
     height: 30px;
-    background-color: #FFF;
-    color: #000;
     border-radius: 32px;
+    background-color: #FFF;
+    font-size: 18px;
+    font-weight: var(--bold-text);
+    color: #000;
     display:flex;
     justify-content: center;
     align-items:center;
-    font-size: 18px;
-    font-weight: 700;
-    text-align: center;
+    cursor: pointer;
 }
 
 
@@ -127,3 +128,4 @@
       display:none;
     }
   }
+

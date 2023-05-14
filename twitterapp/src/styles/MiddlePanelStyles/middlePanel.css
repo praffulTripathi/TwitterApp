@@ -1,25 +1,25 @@
 .middlePanel{
     width: 40%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color:black;
-    height: 100vh;
-    color: #FFF;
-    border: 1px solid grey;
+    border: 1px solid var(--twitter-grey);
+    background-color: var(--twitter-dark-mode);
+    font-size: var(--regular-text);
 }
 .stickyBar{
     height: 100px;
     width: 100%;
     position:sticky;
-    border: 1px solid grey;
+    border: 1px solid var(--twitter-grey);
 }
 .homeText{
     height: 50%;
+    padding: 15px 15px;
+    font-size: var(--large-text);
+    font-weight: var(--bold-text);
     display: flex;
     justify-content: flex-start;
-    font-size:20px;
-    font-weight: 700;
-    padding: 15px 15px;
 }
 .feedTweetsCategory{
     height: 50%;
@@ -27,10 +27,10 @@
     flex-direction: row;
     width:100%;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: var(--bold-text);
 }
 .isNotActive{
-    color: grey;
+    color: var(--twitter-grey);
 }
 .yourTweets{
     width:50%;
@@ -59,7 +59,7 @@
     cursor:pointer;
 }
 .bottomPill{
-    border: 2px solid rgb(26, 140, 216);
+    border: 2px solid var(--twitter-blue);
     border-radius: 8px;
     margin-top:12px;
     height: 2px;
@@ -74,15 +74,19 @@
     display:flex;
     flex-direction: row;
     position:relative;
-    border: 1px solid grey;
+    border: 1px solid var(--twitter-grey);
 }
 .profileLogo{
+    height: 48px;
+    width: 48px;
     margin-top: 15px;
     margin-left: 15px;
     border-radius: 50%;
     cursor:pointer;
 }
 .profileLogo img{
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
 }
 .tweetText{
@@ -94,16 +98,14 @@
     min-height: 100px;
     border: none;
     outline: none;
-    font-size:12px;
-    color: #FFF;
-    resize:none;
-    font-size: 24px;
     overflow:auto;
+    resize:none;
+    color: #FFF;
+    font-size: var(--large-text);
 }
 .tweetTextInputBox::placeholder{
-    color: grey;
-    font-size: 24px;
-    font-weight: 700;
+    color: var(--twitter-grey);
+    font-weight: var(--bold-text);
 }
 
 
@@ -113,15 +115,12 @@
     right: 15px;
     min-width: 120px;
     min-height: 40px;
-    text-decoration: none;
-    color: #000;
-    background-color: rgb(26, 140, 216);
+    background-color: var(--twitter-blue);
     border-radius: 32px;
     border:none;
-    color: #FFF;
-    font-size: 24px;
-    font-weight: 700;
-    text-align:center;
+    text-decoration: none;
+    font-size: var(--large-text);
+    font-weight: var(--bold-text);
     display: flex;
     justify-content: center;
     align-items:center;
@@ -138,7 +137,8 @@
     min-height: 120px;
     display:flex;
     flex-direction: row;
-    border: 1px solid grey;
+    border: 1px solid var(--twitter-grey);
+    cursor: pointer;
 }
 .tweetBodyAndStats{
     display: flex;
@@ -150,39 +150,57 @@
     position: relative;
 }
 .profileName{
-    font-weight: 700;
+    font-weight: var(--bold-text);
 }
 .userNameCard, .dateTimeOfTweet{
-    color: rgb(113, 118, 123);
+    color: var(--twitter-grey);
+    font-weight: normal;
 }
 .userDetailsAndTime{
     line-height: 25px;
 }
 .tweetBody{
     min-height: 50%;
-    font-size: 14px;
 }
 .tweetStats{
     height: 25%;
     width: 100%;
-    display: flex;
-    flex-direction: row;
     position: absolute;
     bottom: 5px;
     left:15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    user-select: none;
 }
-.tweetStats span{
-    color: rgb(113, 118, 123);
+/* .tweetStats span{
+    color: var(--twitter-grey);
+} */
+
+.isLiked > *{
+    color: red;
+    fill: red;
+}
+.isLiked > img{
+    fill: red;
 }
 .commentCount, .retweetCount, .likesCount, .tweetReach{
-    width: 25%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    cursor:pointer;
+}
+.commentCount > *, .retweetCount > *, .likesCount > *, .tweetReach > *{
+    height: 100%;
+}
+.text{
+    display: flex;
+    justify-content: center;
+    align-items: center;;
 }
 .tweetStatIcon{
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    padding-right: 10px;
 }
 
 
