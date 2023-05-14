@@ -14,14 +14,11 @@ function MiddlePanel() {
     const apiResponse = useContext(APIResponseContext);
 
     const format = (num) => {
-        // console.log(num);
         let converted = Math.abs(num) > 999 ? Math.sign(num) * ((Math.abs(num) / 1000).toFixed(1)) + 'k' : Math.sign(num) * Math.abs(num);
-        // console.log(converted);
         return converted;
     }
 
     if (apiResponse != null && tweetList.length == 0) {
-        // setTweetList(apiResponse["tweetThreads"]);
         const tweetThreads = [...apiResponse["tweetThreads"]];
         console.log(tweetThreads);
         const convertedTweets = tweetThreads.map((tweets)=>{
