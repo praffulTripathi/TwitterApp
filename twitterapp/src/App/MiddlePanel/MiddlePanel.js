@@ -13,12 +13,24 @@ function MiddlePanel() {
     const [tweetList, setTweetList] = useState([]);
     const apiResponse = useContext(APIResponseContext);
 
-    if (apiResponse != null && tweetList.length == 0) {
-        setTweetList(apiResponse["tweetThreads"]);
+    const format = (num) => {
+        // console.log(num);
+        let converted = Math.abs(num) > 999 ? Math.sign(num) * ((Math.abs(num) / 1000).toFixed(1)) + 'k' : Math.sign(num) * Math.abs(num);
+        // console.log(converted);
+        return converted;
     }
 
-    const format = (num) => {
-        return Math.abs(num) > 999 ? Math.sign(num) * ((Math.abs(num) / 1000).toFixed(1)) + 'k' : Math.sign(num) * Math.abs(num)
+    if (apiResponse != null && tweetList.length == 0) {
+        // setTweetList(apiResponse["tweetThreads"]);
+        const tweetThreads = [...apiResponse["tweetThreads"]];
+        console.log(tweetThreads);
+        const convertedTweets = tweetThreads.map((tweets)=>{
+            return tweets.map((tweet) => {
+                return {...tweet,likes: format(tweet.likes),replies: format(tweet.replies),views: format(tweet.views),reTweets: format(tweet.reTweets), tweetTime: (months[new Date(tweet.tweetTime).getMonth()] + ' ' + new Date(tweet.tweetTime).getDate())}
+            })
+        })
+        console.log(convertedTweets);
+        setTweetList(convertedTweets);
     }
 
     const addTweetFunction = (description) => {
@@ -33,10 +45,6 @@ function MiddlePanel() {
         }]
         setTweetList(tweetList => [newTweet, ...tweetList]);
     };
-
-    useEffect(() => {
-        console.log(tweetList);
-    }, [tweetList]);
 
     const likeTweet = (event) => {
         let id = event.target.parentNode.parentNode.parentNode.parentNode.id;
