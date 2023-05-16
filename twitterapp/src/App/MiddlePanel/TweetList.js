@@ -7,13 +7,13 @@ import { useContext, useState, useEffect } from 'react';
 import { APIResponseContext } from '../Providers/APIContext';
 
 function TweetList({ tweetList,likeTweet,dislikeTweet }) {
-    const updateTweetLikes = (event) =>{
+    const updateTweetLikes = (event,index) =>{
         if(event.target.parentNode.classList.contains('isLiked')){
             event.target.parentNode.classList.remove('isLiked');
-            dislikeTweet(event);
+            dislikeTweet(index);
         }
         else{
-            likeTweet(event);
+            likeTweet(index);
             event.target.parentNode.classList.add('isLiked');
         }
     }
@@ -39,27 +39,28 @@ function TweetList({ tweetList,likeTweet,dislikeTweet }) {
                                     <img src={commentsIcon} className="tweetStatIcon">
 
                                     </img>
-                                    <span className="text">{tweet[0].replies}</span>
+                                    <span className="text">{tweet[0].repliesFormatted}</span>
                                 </div>
                                 <div className="retweetCount">
                                     <img src={retweetIcon} className="tweetStatIcon">
 
                                     </img>
-                                    <span className="text">{tweet[0].reTweets}</span>
+                                    <span className="text">{tweet[0].reTweetsFormatted}</span>
 
                                 </div>
-                                <div className="likesCount" onClick={updateTweetLikes}>
+                                {/* Pass index as ID */}
+                                <div className="likesCount" onClick={(event)=>{updateTweetLikes(event,index)}}>
                                     <img src={likesIcon} className="tweetStatIcon">
 
                                     </img>
-                                    <span className="text">{tweet[0].likes}</span>
+                                    <span className="text">{tweet[0].likesFormatted}</span>
 
                                 </div>
                                 <div className="tweetReach">
                                     <img src={tweetReachIcon} className="tweetStatIcon">
 
                                     </img>
-                                    <span className="text">{tweet[0].views}</span>
+                                    <span className="text">{tweet[0].viewsFormatted}</span>
 
                                 </div>
                             </div>

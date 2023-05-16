@@ -7,13 +7,14 @@ function UserInfo() {
     const [userInfo, setUserInfo] = useState(null);
 
     const apiResponse = useContext(APIResponseContext);
-    if (apiResponse != null && userInfo == null) {
-        setUserInfo(apiResponse["loggedInUser"]);
-    }
+    useEffect(() => {
+        setUserInfo(apiResponse?.["loggedInUser"]);
+    }, [apiResponse]);
+
     if (userInfo != null)
         return (
             <a className="userInfo" href="/temp">
-                <ProfileLogo  userLogo={userInfo.imageData.url} userAltText={userInfo.imageData.alt}/>
+                <ProfileLogo userLogo={userInfo.imageData.url} userAltText={userInfo.imageData.alt} />
                 <div className="userDetails">
                     <div className="profileName">
                         {userInfo.userName}

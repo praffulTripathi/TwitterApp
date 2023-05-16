@@ -7,9 +7,11 @@ function ComposeTweet({ addTweetFunction }) {
     const [userLoggedIn, setUserLoggedIn] = useState(null);
 
     const apiResponse = useContext(APIResponseContext);
-    if (apiResponse != null && userLoggedIn == null) {
+
+    useEffect(()=>{
+        if(apiResponse!=undefined)
         setUserLoggedIn(apiResponse["loggedInUser"]);
-    }
+    },[apiResponse]);
 
     const addNewTweet = (event) => {
         let tweetTextArea = document.querySelector(".tweetTextInputBox");

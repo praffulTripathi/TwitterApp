@@ -3,13 +3,13 @@ import { useEffect, useState, useContext } from "react";
 import { APIResponseContext } from '../Providers/APIContext';
 
 function Trending() {
-    
+
     const [trendingData, setTrendingData] = useState(null);
     const apiResponse = useContext(APIResponseContext);
 
-    if (apiResponse != null && trendingData == null) {
-        setTrendingData(apiResponse["trendingData"]);
-    }
+    useEffect(() => {
+        setTrendingData(apiResponse?.["trendingData"]);
+    }, [apiResponse]);
 
 
     if (trendingData != null)
