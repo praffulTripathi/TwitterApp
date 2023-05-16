@@ -1,0 +1,254 @@
+.middlePanel {
+    width: 35%;
+    min-width: 600px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--twitter-grey);
+    border-top: none;
+    background-color: var(--twitter-dark-mode);
+    font-size: var(--regular-text);
+}
+
+.scrollable {
+    overflow: auto;
+}
+
+.scrollable::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
+}
+
+.stickyBar {
+    height: 100px;
+    width: 100%;
+    position: sticky;
+    border-bottom: 1px solid var(--twitter-grey);
+}
+
+.homeText {
+    height: 50%;
+    padding: 15px 15px;
+    font-size: var(--large-text);
+    font-weight: var(--bold-text);
+    display: flex;
+    justify-content: flex-start;
+}
+
+.feedTweetsCategory {
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 15px;
+    font-weight: var(--bold-text);
+}
+
+.isNotActive {
+    color: var(--twitter-grey);
+}
+
+.yourTweets {
+    width: 50%;
+}
+
+.maxHeight {
+    height: 100%;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.textDesc {
+    padding-top: 12px;
+    height: 90%;
+    width: 100%;
+}
+
+.followingTweets {
+    width: 50%;
+}
+
+.centerText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.bottomPill {
+    border: 2px solid var(--twitter-blue);
+    border-radius: 8px;
+    margin-top: 12px;
+    height: 2px;
+    width: 100%;
+}
+
+
+
+
+.composeTweet {
+    min-height: 120px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    border-bottom: 1px solid var(--twitter-grey);
+}
+
+.profileLogo {
+    height: 48px;
+    width: 48px;
+    margin-top: 15px;
+    margin-left: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.profileLogo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.tweetText {
+    min-width: 80%;
+    padding: 15px 15px;
+}
+
+.tweetTextInputBox {
+    width: 100%;
+    min-height: 100px;
+    border: none;
+    outline: none;
+    overflow: auto;
+    resize: none;
+    color: #FFF;
+    font-size: var(--large-text);
+}
+
+.tweetTextInputBox::placeholder {
+    color: var(--twitter-grey);
+    font-weight: var(--bold-text);
+}
+
+
+.generateNewTweet {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    min-width: 90px;
+    min-height: 40px;
+    background-color: var(--twitter-blue);
+    border-radius: 32px;
+    border: none;
+    text-decoration: none;
+    font-size: var(--medium-text);
+    font-weight: var(--bold-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.tweetListOuter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tweetList {
+    width: 100%;
+    min-height: 120px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid var(--twitter-grey);
+    cursor: pointer;
+}
+
+.tweetBodyAndStats {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    padding: 15px 15px;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.profileName {
+    font-weight: var(--bold-text);
+}
+
+.userNameCard,
+.dateTimeOfTweet {
+    color: var(--twitter-grey);
+    font-weight: normal;
+}
+
+.userDetailsAndTime {
+    line-height: 25px;
+}
+
+.tweetBody {
+    min-height: 50%;
+}
+
+.tweetStats {
+    height: 25%;
+    width: 100%;
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.isLiked>* {
+    color: red;
+    fill: red;
+}
+
+.isLiked>img {
+    fill: red;
+}
+
+.commentCount,
+.retweetCount,
+.likesCount,
+.tweetReach {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.commentCount>*,
+.retweetCount>*,
+.likesCount>*,
+.tweetReach>* {
+    height: 100%;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tweetStatIcon {
+    width: 30px;
+    padding-right: 10px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .middlePanel {
+        width: 100%;
+    }
+}

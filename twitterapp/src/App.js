@@ -1,18 +1,22 @@
-import logo from './logo.svg';
+import { createContext, useEffect, useState, useContext } from 'react';
 import './App.css';
-import './styles/leftPanel.css'
-import './styles/middlePanel.css'
-import './styles/rightPanel.css'
-import LeftPanel from './App/LeftPanel';
-import MiddlePanel from './App/MiddlePanel';
-import RightPanel from './App/RightPanel';
+import './styles/GlobalStyles/root.css'
+import './styles/LeftPanelStyles/leftPanel.css'
+import './styles/MiddlePanelStyles/middlePanel.css'
+import './styles/RightPanelStyles/rightPanel.css'
+import LeftPanel from './App/LeftPanel/LeftPanel.js'
+import MiddlePanel from './App/MiddlePanel/MiddlePanel.js'
+import RightPanel from './App/RightPanel/RightPanel.js'
+import { APIDataProvider, APIResponseContext } from './App/Providers/APIContext';
+
 
 function App() {
+
   return (
     <div className="App">
-    <LeftPanel/>
-    <MiddlePanel />
-    <RightPanel />
+      <LeftPanel />
+      <MiddlePanel />
+      <RightPanel />
     </div>
   )
 }

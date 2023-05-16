@@ -1,9 +1,12 @@
+import { useContext, useState } from 'react';
 import ListItems from "./ListItems";
 import TweetButton from "./TweetButton";
 import UserInfo from "./UserInfo";
-function LeftPanel(){
+import { APIResponseContext } from '../Providers/APIContext';
 
-    return(
+
+function LeftPanel() {
+    return (
         <div className="leftPanel">
             <div className="left-panel-list">
                 <ListItems />

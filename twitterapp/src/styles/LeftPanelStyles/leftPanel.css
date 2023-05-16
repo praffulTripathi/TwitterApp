@@ -1,0 +1,154 @@
+/* a:hover{
+    background-color: #2b2929;
+} */
+.leftPanel {
+  position: sticky;
+  top: 0px;
+  width: 30%;
+  min-width: 320px;
+  height: 100vh;
+  margin-right: 12px;
+  font-size: var(--large-text);
+  font-weight: var(--bold-text);
+  color: var(--dark-theme-text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.left-panel-list {
+  min-width: 270px;
+}
+
+.left-list-item {
+  padding: 12px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  min-height: 50px;
+  border-radius: 32px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 25%;
+}
+
+.leftPanelIcon {
+  height: var(--large-text);
+  width: var(--large-text);
+  fill: #FFF;
+}
+
+.leftPanelItemTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.newTweetButton {
+  margin-top: 24px;
+  min-height: 50px;
+  min-width: 40%;
+  text-decoration: none;
+  border: none;
+  background-color: var(--twitter-blue);
+  border-radius: 32px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.userInfoDisplay {
+  margin: 12px 0;
+  min-width: 270px;
+  height: 60px;
+}
+
+.userInfo {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 32px;
+  padding: 5px 5px;
+}
+
+.userNameIcon {
+  height: 100%;
+  min-width: 17%;
+  padding: 5px 5px;
+  background-color: #3dd93d;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userDetails {
+  min-width: 50%;
+  font-size: var(--regular-text);
+  margin: 15px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.userFullName {
+  font-weight: 600;
+}
+
+.username {
+  font-weight: normal;
+  color: var(--twitter-grey);
+}
+
+.hamburgerMenu {
+  min-width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+@media only screen and (max-width: 1080px) {
+  .left-panel-list {
+    min-width: 240px;
+  }
+
+  .userInfoDisplay {
+    min-width: 240px;
+  }
+
+  .userNameIcon {
+    min-width: 22%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .leftPanel {
+    width: 0%;
+    display: none;
+  }
+
+  .rightPanel {
+    width: 0%;
+    display: none;
+  }
+
+  .middlePanel {
+    width: 100%;
+  }
+}
