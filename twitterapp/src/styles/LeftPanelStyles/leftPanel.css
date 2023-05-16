@@ -2,7 +2,10 @@
     background-color: #2b2929;
 } */
 .leftPanel {
+  position: sticky;
+  top: 0px;
   width: 30%;
+  min-width: 320px;
   height: 100vh;
   margin-right: 12px;
   font-size: var(--large-text);
@@ -10,12 +13,12 @@
   color: var(--dark-theme-text-color);
   display: flex;
   flex-direction: column;
-  position: relative;
   align-items: flex-end;
+  justify-content: space-between;
 }
 
 .left-panel-list {
-  min-width: 300px;
+  min-width: 270px;
 }
 
 .left-list-item {
@@ -64,10 +67,8 @@
 
 
 .userInfoDisplay {
-  position: absolute;
-  bottom: 24px;
-  right: 12px;
-  min-width: 300px;
+  margin: 12px 0;
+  min-width: 270px;
   height: 60px;
 }
 
@@ -97,7 +98,7 @@
 .userDetails {
   min-width: 50%;
   font-size: var(--regular-text);
-  padding: 0 12px;
+  margin: 15px 12px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -136,7 +137,7 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
   .leftPanel {
     width: 0%;
     display: none;

@@ -1,19 +1,31 @@
-.middlePanel{
-    width: 40%;
-    height: 100vh;
+.middlePanel {
+    width: 35%;
+    min-width: 600px;
     display: flex;
     flex-direction: column;
     border: 1px solid var(--twitter-grey);
+    border-top: none;
     background-color: var(--twitter-dark-mode);
     font-size: var(--regular-text);
 }
-.stickyBar{
+
+.scrollable {
+    overflow: auto;
+}
+
+.scrollable::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
+}
+
+.stickyBar {
     height: 100px;
     width: 100%;
-    position:sticky;
-    border: 1px solid var(--twitter-grey);
+    position: sticky;
+    border-bottom: 1px solid var(--twitter-grey);
 }
-.homeText{
+
+.homeText {
     height: 50%;
     padding: 15px 15px;
     font-size: var(--large-text);
@@ -21,47 +33,56 @@
     display: flex;
     justify-content: flex-start;
 }
-.feedTweetsCategory{
+
+.feedTweetsCategory {
     height: 50%;
-    display:flex;
+    display: flex;
     flex-direction: row;
-    width:100%;
+    width: 100%;
     font-size: 15px;
     font-weight: var(--bold-text);
 }
-.isNotActive{
+
+.isNotActive {
     color: var(--twitter-grey);
 }
-.yourTweets{
-    width:50%;
+
+.yourTweets {
+    width: 50%;
 }
-.maxHeight{
+
+.maxHeight {
     height: 100%;
 }
-.text{
+
+.text {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
-.textDesc{
-    padding-top:12px;
+
+.textDesc {
+    padding-top: 12px;
     height: 90%;
     width: 100%;
 }
-.followingTweets{
-    width:50%;
+
+.followingTweets {
+    width: 50%;
 }
-.centerText{
+
+.centerText {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    cursor:pointer;
+    cursor: pointer;
 }
-.bottomPill{
+
+.bottomPill {
     border: 2px solid var(--twitter-blue);
     border-radius: 8px;
-    margin-top:12px;
+    margin-top: 12px;
     height: 2px;
     width: 100%;
 }
@@ -69,78 +90,85 @@
 
 
 
-.composeTweet{
+.composeTweet {
     min-height: 120px;
-    display:flex;
+    display: flex;
     flex-direction: row;
-    position:relative;
-    border: 1px solid var(--twitter-grey);
+    position: relative;
+    border-bottom: 1px solid var(--twitter-grey);
 }
-.profileLogo{
+
+.profileLogo {
     height: 48px;
     width: 48px;
     margin-top: 15px;
     margin-left: 15px;
     border-radius: 50%;
-    cursor:pointer;
+    cursor: pointer;
 }
-.profileLogo img{
+
+.profileLogo img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
 }
-.tweetText{
+
+.tweetText {
     min-width: 80%;
     padding: 15px 15px;
 }
-.tweetTextInputBox{
-    width:100%;
+
+.tweetTextInputBox {
+    width: 100%;
     min-height: 100px;
     border: none;
     outline: none;
-    overflow:auto;
-    resize:none;
+    overflow: auto;
+    resize: none;
     color: #FFF;
     font-size: var(--large-text);
 }
-.tweetTextInputBox::placeholder{
+
+.tweetTextInputBox::placeholder {
     color: var(--twitter-grey);
     font-weight: var(--bold-text);
 }
 
 
-.generateNewTweet{
+.generateNewTweet {
     position: absolute;
-    bottom:15px;
+    bottom: 15px;
     right: 15px;
-    min-width: 120px;
+    min-width: 90px;
     min-height: 40px;
     background-color: var(--twitter-blue);
     border-radius: 32px;
-    border:none;
+    border: none;
     text-decoration: none;
-    font-size: var(--large-text);
+    font-size: var(--medium-text);
     font-weight: var(--bold-text);
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
 
-.tweetListOuter{
+.tweetListOuter {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
-.tweetList{
+
+.tweetList {
     width: 100%;
     min-height: 120px;
-    display:flex;
+    display: flex;
     flex-direction: row;
-    border: 1px solid var(--twitter-grey);
+    border-bottom: 1px solid var(--twitter-grey);
     cursor: pointer;
 }
-.tweetBodyAndStats{
+
+.tweetBodyAndStats {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -149,65 +177,78 @@
     padding-bottom: 5px;
     position: relative;
 }
-.profileName{
+
+.profileName {
     font-weight: var(--bold-text);
 }
-.userNameCard, .dateTimeOfTweet{
+
+.userNameCard,
+.dateTimeOfTweet {
     color: var(--twitter-grey);
     font-weight: normal;
 }
-.userDetailsAndTime{
+
+.userDetailsAndTime {
     line-height: 25px;
 }
-.tweetBody{
+
+.tweetBody {
     min-height: 50%;
 }
-.tweetStats{
+
+.tweetStats {
     height: 25%;
     width: 100%;
     position: absolute;
     bottom: 5px;
-    left:15px;
+    left: 15px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     user-select: none;
 }
-/* .tweetStats span{
-    color: var(--twitter-grey);
-} */
 
-
-.isLiked > *{
+.isLiked>* {
     color: red;
     fill: red;
 }
-.isLiked > img{
+
+.isLiked>img {
     fill: red;
 }
-.commentCount, .retweetCount, .likesCount, .tweetReach{
+
+.commentCount,
+.retweetCount,
+.likesCount,
+.tweetReach {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor:pointer;
+    cursor: pointer;
 }
-.commentCount > *, .retweetCount > *, .likesCount > *, .tweetReach > *{
+
+.commentCount>*,
+.retweetCount>*,
+.likesCount>*,
+.tweetReach>* {
     height: 100%;
 }
-.text{
+
+.text {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.tweetStatIcon{
+
+.tweetStatIcon {
     width: 30px;
     padding-right: 10px;
 }
 
 
 
-@media only screen and (max-width: 800px) {
-    .middlePanel{
-      width: 100%;
+@media only screen and (max-width: 768px) {
+    .middlePanel {
+        width: 100%;
     }
 }

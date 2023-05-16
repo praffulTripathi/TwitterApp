@@ -20,13 +20,11 @@ function MiddlePanel() {
 
     if (apiResponse != null && tweetList.length == 0) {
         const tweetThreads = [...apiResponse["tweetThreads"]];
-        console.log(tweetThreads);
         const convertedTweets = tweetThreads.map((tweets)=>{
             return tweets.map((tweet) => {
                 return {...tweet,likes: format(tweet.likes),replies: format(tweet.replies),views: format(tweet.views),reTweets: format(tweet.reTweets), tweetTime: (months[new Date(tweet.tweetTime).getMonth()] + ' ' + new Date(tweet.tweetTime).getDate())}
             })
         })
-        console.log(convertedTweets);
         setTweetList(convertedTweets);
     }
 
@@ -62,7 +60,7 @@ function MiddlePanel() {
 
         if (tweetList != null)
             return (
-                <div className="middlePanel">
+                <div className="middlePanel scrollable">
                     <StickyBar />
                     <ComposeTweet addTweetFunction={addTweetFunction} />
                     <div className="tweetListOuter">
