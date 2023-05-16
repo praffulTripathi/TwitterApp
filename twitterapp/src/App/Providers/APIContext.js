@@ -1,12 +1,12 @@
-import { createContext,useState,useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const APIResponseContext = createContext();
 
-export const APIDataProvider = ({children})=>{
-  
-  const [apiResponse, setApiResponse] = useState(null);
-  
-  const fetchDataFromAPI = async()=> {
+export const APIDataProvider = ({ children }) => {
+
+  const [apiResponse, setApiResponse] = useState(undefined);
+
+  const fetchDataFromAPI = async () => {
     await fetch("https://sandbox.nextleap.app/page/fetch")
       .then((response) => {
         if (response.ok)
@@ -14,20 +14,18 @@ export const APIDataProvider = ({children})=>{
         return Promise.reject(response);
       })
       .then((jsonData) => {
-        if(jsonData!=null){
-          setApiResponse(jsonData);
-        }
+        setApiResponse(jsonData);
       })
       .catch((error) => console.log(`Error Fetching data from source\n${error}`));
   }
-  
+
   useEffect(() => {
     fetchDataFromAPI();
   }, [])
-  
-  return(
+
+  return (
     <APIResponseContext.Provider value={apiResponse}>
-        {children}
+      {children}
     </APIResponseContext.Provider>
   )
 }

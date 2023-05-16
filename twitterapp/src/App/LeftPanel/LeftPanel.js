@@ -6,6 +6,7 @@ import { APIResponseContext } from '../Providers/APIContext';
 
 
 function LeftPanel() {
+    
     return (
         <div className="leftPanel">
             <div className="left-panel-list">
