@@ -6,7 +6,7 @@ import TweetList from "./TweetList";
 import { TweetListContext } from "../Providers/TweetListContext";
 
 function MiddlePanel() {
-    console.log("Render Middle Panel");
+    
     const { tweetList, setTweetList } = useContext(TweetListContext);
     const apiResponse = useContext(APIResponseContext);
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
@@ -48,7 +48,6 @@ function MiddlePanel() {
         });
     }
 
-    console.log(tweetList);
     return (
         <div className="middlePanel scrollable">
             <StickyBar />

@@ -21,7 +21,6 @@ function TweetList({ tweetList, likeTweet, dislikeTweet }) {
 
     return (
         tweetList.map((tweet, index) => {
-            console.log(tweet[0].likesFormatted);
             return (
                 <div className="tweetList" id={index} key={index}>
                     <ProfileLogo userLogo={tweet[0].user.imageData.url} userAltText={tweet[0].user.imageData.alt} />

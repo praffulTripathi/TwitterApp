@@ -5,7 +5,7 @@
     top: 0px;
     min-width: 320px;
     margin-left: 12px;
-    margin-top: 8px;
+    padding-top: 8px;
     font-size: var(--regular-text);
     display: flex;
     flex-direction: column;
@@ -119,7 +119,7 @@
     height: 30px;
     border-radius: 32px;
     background-color: #FFF;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: var(--bold-text);
     color: #000;
     display:flex;
