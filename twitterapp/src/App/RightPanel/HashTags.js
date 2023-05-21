@@ -1,11 +1,11 @@
-function HashTags(hashTags) {
-    // if (hashTags !== undefined){
-    //     console.log(hashTags);
-    //     return (
-    //         hashTags.map(hashTag => {
-    //             <span className="hashTag">{hashTag}</span>
-    //         })
-    //     )
-    // }
+function HashTags({hashTags}) {
+    if (hashTags !== undefined){
+        return (
+            hashTags.map((hashTag) => {
+                return(<span className="hashTag" key={hashTag}>{hashTag}</span>)
+                
+            })
+        )
+    }
 }
 export default HashTags;

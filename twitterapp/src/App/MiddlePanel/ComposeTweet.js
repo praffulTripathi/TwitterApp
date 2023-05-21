@@ -10,7 +10,7 @@ function ComposeTweet({ addTweetFunction }) {
 
     useEffect(()=>{
         if(apiResponse!=undefined)
-        setUserLoggedIn(apiResponse["loggedInUser"]);
+            setUserLoggedIn(apiResponse["loggedInUser"]);
     },[apiResponse]);
 
     const addNewTweet = (event) => {

@@ -51,6 +51,9 @@
     border-radius: 15px;
     min-width: 320px;
 }
+.trending > *,.recommendations > *{
+    background-color: var(--twitter-grey);
+}
 
 .whatsHappening{
     font-size: var(--large-text);
@@ -68,6 +71,10 @@
 .rightPanelColor{
     background-color: var(--twitter-list-dark-bkg);
 }
+.rightPanelColor > *{
+    background-color: var(--twitter-list-dark-bkg);
+}
+
 .category, .trendingReason, .showMore, .showMoreAnchor, .userNameCard{
     color: var(--twitter-grey);
 }
@@ -119,6 +126,10 @@
     justify-content: center;
     align-items:center;
     cursor: pointer;
+}
+
+.hashTag{
+    color: var(--twitter-blue);
 }
 
 

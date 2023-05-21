@@ -1,19 +1,18 @@
 import HashTags from "./HashTags";
 
-function TrendingList({ trending }) {
-    if (trending != null)
+function TrendingList({ trending }) {   
         return (
-            trending.trends.map((topic,index) => [
+            trending.trends.map((trend, index) => [
                 <div className="trendingListItems" key={index}>
                     <div className="category rightPanelColor">
-                        {topic.country} {topic.category}
+                        {trend.country} {trend.category}
                     </div>
                     <div className="tweetTitle rightPanelColor">
-                        {topic.text}
+                        {trend.text}
                     </div>
                     <div className="trendingReason rightPanelColor">
-                        {topic.tweets}  
-                        <HashTags hashTags={topic.hashTags}/>
+                        <span className="tweetCount">{trend.tweets}</span>
+                        <HashTags hashTags={trend.hashTags} />
                     </div>
                 </div>
             ])

@@ -8,14 +8,17 @@ import LeftPanel from './App/LeftPanel/LeftPanel.js'
 import MiddlePanel from './App/MiddlePanel/MiddlePanel.js'
 import RightPanel from './App/RightPanel/RightPanel.js'
 import { APIDataProvider, APIResponseContext } from './App/Providers/APIContext';
+import { TweetListProvider } from './App/Providers/TweetListContext';
 
 
 function App() {
-
+  
   return (
     <div className="App">
       <LeftPanel />
-      <MiddlePanel />
+      <TweetListProvider>
+        <MiddlePanel />
+      </TweetListProvider>
       <RightPanel />
     </div>
   )
