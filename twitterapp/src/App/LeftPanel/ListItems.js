@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { APIResponseContext } from "../Providers/APIContext";
 import SvgIcon from "./SvgIcon";
+import NavigationIcon from "./NavigationIcon";
 
 function ListItems() {
   const [listItems, setListItems] = useState(null);
@@ -18,7 +19,13 @@ function ListItems() {
         })
         .then((data) => {
           const regex = /fill="(.*?)"/g;
-          const modifiedData = data.replace(regex, `fill="#FFF"`);
+          const widthRegex = /width="(.*?)"/g;
+          const heightRegex = /height="(.*?)"/g;
+          const modifiedData = data
+            .replace(regex, `fill="#FFF"`)
+            .replace('<?xml version="1.0"?>', " ")
+            .replace(widthRegex, "width=\"100%\"")
+            .replace(heightRegex, "height=\"100%\"");
           return modifiedData;
         });
       return data;
@@ -34,8 +41,6 @@ function ListItems() {
         );
 
         const allSVGModifiedData = await Promise.all(promises);
-        console.log(allSVGModifiedData);
-        console.log(typeof allSVGModifiedData);
         if (allSVGModifiedData) setListSVGs(allSVGModifiedData);
         return allSVGModifiedData;
       }
@@ -51,7 +56,8 @@ function ListItems() {
       return (
         <a href={item.actionUrl} className="left-list-item" key={index}>
           <div className="icon">
-            <img src={listSVGs[index]} className="leftPanelIcon"></img>
+            <NavigationIcon index={index} listSVG={listSVGs}></NavigationIcon>
+            {/* <img src={listSVGs[index]} className="leftPanelIcon"></img> */}
           </div>
           <div className="leftPanelItemTitle">{item.buttonText}</div>
         </a>
