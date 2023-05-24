@@ -57,7 +57,6 @@ function ListItems() {
         <a href={item.actionUrl} className="left-list-item" key={index}>
           <div className="icon">
             <NavigationIcon index={index} listSVG={listSVGs}></NavigationIcon>
-            {/* <img src={listSVGs[index]} className="leftPanelIcon"></img> */}
           </div>
           <div className="leftPanelItemTitle">{item.buttonText}</div>
         </a>

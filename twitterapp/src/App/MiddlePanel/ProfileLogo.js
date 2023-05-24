@@ -1,7 +1,7 @@
-function ProfileLogo({userLogo,userAltText}) {
+function ProfileLogo({userLogo,userAltText,imgClass}) {
     return (
-        <div className="profileLogo">
-            <img src={userLogo} alt={userAltText} className="profileImage"></img>
+        <div className={`profileLogo ${imgClass}`}>
+            <img src={userLogo} alt={userAltText} ></img>
         </div>
     )
 }

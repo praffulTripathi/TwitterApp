@@ -3,6 +3,7 @@
     min-width: 600px;
     display: flex;
     flex-direction: column;
+    position:relative;
     border: 1px solid var(--twitter-grey);
     border-top: none;
     background-color: var(--twitter-dark-mode);
@@ -10,7 +11,7 @@
 }
 
 .scrollable {
-    overflow: auto;
+    overflow: scroll;
 }
 
 .scrollable::-webkit-scrollbar {
@@ -21,7 +22,8 @@
 .stickyBar {
     height: 100px;
     width: 100%;
-    position: fixed;
+    top:0;
+    position: sticky;
     z-index:1000;
     border-bottom: 1px solid var(--twitter-grey);
 }
@@ -29,7 +31,7 @@
 .homeText {
     height: 50%;
     padding: 15px 15px;
-    font-size: var(--large-text);
+    font-size: var(--root-20px-text);
     font-weight: var(--bold-text);
     display: flex;
     justify-content: flex-start;
@@ -40,7 +42,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    font-size: 15px;
+    font-size: var(--root-14px-text);
     font-weight: var(--bold-text);
 }
 
@@ -56,7 +58,7 @@
     height: 100%;
 }
 
-.text {
+.textWithPill {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -100,12 +102,28 @@
 }
 
 .profileLogo {
-    height: 48px;
-    width: 48px;
     margin-top: 15px;
     margin-left: 15px;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.profileLogo.left{
+    height: 40px;
+    width: 40px;
+    margin-top: 7px;
+}
+.profileLogo.middle{
+    height: 45px;
+    width: 45px;
+    margin-top: 20px;
+}
+.profileLogo.right{
+    height: 47px;
+    width: 47px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 12px;
 }
 
 .profileLogo img {
@@ -127,7 +145,7 @@
     overflow: auto;
     resize: none;
     color: #FFF;
-    font-size: var(--large-text);
+    font-size: var(--root-20px-text);
 }
 
 .tweetTextInputBox::placeholder {
@@ -146,7 +164,7 @@
     border-radius: 32px;
     border: none;
     text-decoration: none;
-    font-size: var(--medium-text);
+    font-size: var(--root-15px-text);
     font-weight: var(--bold-text);
     display: flex;
     justify-content: center;
@@ -179,26 +197,66 @@
     position: relative;
 }
 
-.profileName {
-    font-weight: var(--bold-text);
+.tweetUserProfileName{
+    font-size: var(--root-16px-text);
+    font-weight: 600;
+    color: #FFF;
+    margin-right: 5px;
 }
 
-.userNameCard,
-.dateTimeOfTweet {
+.tweetUserUserName,
+.tweetDateTime {
+    font-size: var(--root-16px-text);
     color: var(--twitter-grey);
-    font-weight: normal;
+    font-weight: 400;
+    margin-right: 10px;
+}
+
+.tweetUserUserName{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.tweetUserUserName > *{
+    color: var(--twitter-grey);
+}
+
+.dot{
+    width: 4px;
+    height: 4px;
+    background-color: var(--twitter-grey);
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-left: 10px;
 }
 
 .userDetailsAndTime {
     line-height: 25px;
+    display:flex;
+    flex-direction: row;
+}
+
+.blueTick{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.verifiedUserIcon{
+    height: 20px;
+    width: 20px;
 }
 
 .tweetBody {
+    font-size: var(--root-14px-text);
     min-height: 50%;
 }
 
 .tweetStats {
-    height: 25%;
+    height: 20%;
     width: 100%;
     position: absolute;
     bottom: 5px;
@@ -207,6 +265,7 @@
     flex-direction: row;
     justify-content: space-between;
     user-select: none;
+    font-size: var(--root-12px-text);
 }
 
 .isLiked>* {

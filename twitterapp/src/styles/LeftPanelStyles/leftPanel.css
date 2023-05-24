@@ -8,7 +8,7 @@
   min-width: 320px;
   height: 100vh;
   margin-right: 12px;
-  font-size: var(--large-text);
+  font-size: var(--root-19px-text);
   font-weight: var(--bold-text);
   color: var(--dark-theme-text-color);
   display: flex;
@@ -38,8 +38,8 @@
 }
 
 .leftPanelIcon {
-  height: var(--large-text);
-  width: var(--large-text);
+  height: var(--root-20px-text);
+  width: var(--root-20px-text);
   fill: #FFF;
 }
 
@@ -58,6 +58,8 @@
   text-decoration: none;
   border: none;
   background-color: var(--twitter-blue);
+  font-size: var(--root-17px-text);
+  font-weight: var(--bold-text);
   border-radius: 32px;
   text-align: center;
   display: flex;
@@ -70,6 +72,10 @@
   margin: 12px 0;
   min-width: 270px;
   height: 60px;
+}
+
+.name{
+  margin-right: 5px;
 }
 
 .userInfo {
@@ -118,6 +124,7 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 

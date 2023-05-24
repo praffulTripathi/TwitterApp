@@ -1,17 +1,18 @@
 import HashTags from "./HashTags";
+import TweetCount from "./TweetCount";
 
 function TrendingList({ trending }) {   
         return (
             trending.trends.map((trend, index) => [
                 <div className="trendingListItems" key={index}>
-                    <div className="category rightPanelColor">
+                    <div className="trendingSubtitle rightPanelColor">
                         {trend.country} {trend.category}
                     </div>
-                    <div className="tweetTitle rightPanelColor">
+                    <div className="trendingTitle rightPanelColor">
                         {trend.text}
                     </div>
                     <div className="trendingReason rightPanelColor">
-                        <span className="tweetCount">{trend.tweets}</span>
+                        <TweetCount tweetCount={trend.tweets}></TweetCount>
                         <HashTags hashTags={trend.hashTags} />
                     </div>
                 </div>
