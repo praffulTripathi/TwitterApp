@@ -14,7 +14,7 @@ function FollowRecommendation() {
     if (followData != null)
         return (
             <div className="recommendations rightPanelColor">
-                <div className="whatsHappening rightPanelColor noTopMargin" >{followData.title}</div>
+                <div className="whoToFollowHeading rightPanelColor noTopMargin" >{followData.title}</div>
                 <div className="suggestionsList">
                     <RecommendationList followData={followData} />
                 </div>

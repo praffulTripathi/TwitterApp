@@ -6,14 +6,14 @@ function StickyBar() {
             </div>
             <div className="feedTweetsCategory">
                 <div className="yourTweets centerText maxHeight">
-                    <div className="text">
+                    <div className="textWithPill">
                         <span className="textDesc">For You</span>
                         <div className="bottomPill">
                         </div>
                     </div>
                 </div>
                 <div className="followingTweets centerText maxHeight">
-                    <div className="text">
+                    <div className="textWithPill">
                         <span className="textDesc isNotActive">Following</span>
                         <div className="bottomPill">
                         </div>

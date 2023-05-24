@@ -4,11 +4,21 @@
     --twitter-list-dark-bkg : rgb(22,24,28);
     --twitter-grey: rgb(113, 118, 123);
     --hover-bkg-color: #2b2929;
-    --large-text: 24px;
-    --bold-text: 700;
-    --regular-text: 14px;
+    --large-text: 20px;
     --medium-text: 18px;
     --dark-theme-text-color: #FFF;
+
+    --root-12px-text: 12px;
+    --root-13px-text: 13px;
+    --root-14px-text: 14px;
+    --root-15px-text: 15px;
+    --root-16px-text: 16px;
+    --root-17px-text: 17px;
+    --root-19px-text: 19px;
+    --root-20px-text: 20px;
+    --regular-text: 400;
+    --bold-text: 700;
+
 }
 .root{
     background-color: var(--twitter-dark-mode);

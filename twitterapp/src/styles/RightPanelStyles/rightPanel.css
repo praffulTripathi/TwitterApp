@@ -14,7 +14,7 @@
 .SearchTwitter{
     font-size:0;
     padding: 10px 10px;
-    min-width: 320px;
+    min-width: 340px;
     border-radius: 25px;
     background-color: var(--twitter-list-dark-bkg);
     display:flex;
@@ -24,7 +24,9 @@
     background-color: var(--twitter-list-dark-bkg);
 }
 .searchIconSpan{
-    width: 10%;
+    width: 10%;display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .searchInput{
     width: 90%;
@@ -34,10 +36,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 15px;
 }
 .searchInput::placeholder{
     color: var(--twitter-grey);
-    font-size: 18px;
+    font-size: 15px;
 }
 .searchIcon{
     height: 18px;
@@ -47,16 +50,16 @@
 
 .trending, .recommendations {
     margin-top: 12px;
-    padding: 10px 10px;
+    padding: 12px 16px;
     border-radius: 15px;
-    min-width: 320px;
+    min-width: 340px;
 }
 .trending > *,.recommendations > *{
     background-color: var(--twitter-grey);
 }
 
-.whatsHappening{
-    font-size: var(--large-text);
+.trendingHeading, .whoToFollowHeading{
+    font-size: var(--root-19px-text);
     font-weight: var(--bold-text);
     margin-bottom: 10px;
 }
@@ -66,7 +69,7 @@
     width: 100%;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 10px 0;
+    margin: 12px 0;
 }
 .rightPanelColor{
     background-color: var(--twitter-list-dark-bkg);
@@ -75,17 +78,34 @@
     background-color: var(--twitter-list-dark-bkg);
 }
 
-.category, .trendingReason, .showMore, .showMoreAnchor, .userNameCard{
+.trendingSubtitle, .trendingReason, .showMore, .showMoreAnchor, .userNameCard{
     color: var(--twitter-grey);
 }
-.tweetTitle, .profileName{
+.userNameCard{
+    font-size:  var(--root-14px-text);
+}
+
+.trendingSubtitle, .tweetCount, .hashTag{
+    font-size: var(--root-13px-text);
+}
+
+.trendingTitle{
+    font-size: var(--root-15px-text);
+    margin: 2px 0;
+}
+
+.profileName{
     color: #FFF;
-    font-size: var(--medium-text);
-    font-weight: var(--bold-text);
+    font-size: var(--root-16px-text);
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 .showMore{
     margin-top: 10px;
-    margin-bottom: 10px;
+    font-size: var(--root-15px-text);
 }
 .showMoreAnchor{
     height: 100%;
@@ -97,11 +117,7 @@
 .followSuggestions{
     display:flex;
     flex-direction: row;
-}
-
-.whoToFollow{
-    margin-top: 10px;
-    margin: 10px 10px;
+    margin: 12px 0;
 }
 
 .noTopMargin{
@@ -113,7 +129,6 @@
 }
 
 .followUser{
-    margin-top: 15px;
     margin-left: 15px;
     width: 80px;
     height: 30px;
@@ -128,11 +143,30 @@
     cursor: pointer;
 }
 
-.hashTag{
-    color: var(--twitter-blue);
+.hashTagList, .tweetCountDisplay{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
 
+.trendingWithText, .tweetCount, .tweetsText{
+    font-size: var(--root-13px-text);
+    margin-right: 4px;
+    font-weight: 100;
+    font-weight: normal;
+    color: var(--twitter-grey);
+}
 
+.hashTags{
+    display: flex;
+}
+
+.hashTag{
+    color: var(--twitter-blue);
+    font-weight: 600;
+    background-color: var(--twitter-list-dark-bkg);
+}
 
 @media only screen and (max-width: 768px) {
     .rightPanel{

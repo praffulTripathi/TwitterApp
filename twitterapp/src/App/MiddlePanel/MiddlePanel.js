@@ -49,7 +49,7 @@ function MiddlePanel() {
     }
 
     return (
-        <div className="middlePanel scrollable">
+        <div className="middlePanel">
             <StickyBar />
             <ComposeTweet addTweetFunction={addTweetFunction} />
             <div className="tweetListOuter">

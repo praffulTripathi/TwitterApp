@@ -25,7 +25,7 @@ function ComposeTweet({ addTweetFunction }) {
     if(userLoggedIn!=null){
         return (
             <div className="composeTweet">
-                <ProfileLogo  userLogo={userLoggedIn.imageData.url} userAltText={userLoggedIn.imageData.alt}/>
+                <ProfileLogo  userLogo={userLoggedIn.imageData.url} userAltText={userLoggedIn.imageData.alt} imgClass={"middle"}/>
                 <div className="tweetText">
                     <textarea className="tweetTextInputBox" type="text" placeholder="What's happening?"></textarea>
                 </div>
