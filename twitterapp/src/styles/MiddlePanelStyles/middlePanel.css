@@ -178,12 +178,15 @@
     flex-direction: column;
 }
 
+.tweetThreadOuter{
+    border-bottom: 1px solid var(--twitter-grey);
+}
+
 .tweetList {
     width: 100%;
     min-height: 120px;
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid var(--twitter-grey);
     cursor: pointer;
 }
 
