@@ -7,24 +7,33 @@ import { useContext, useState, useEffect } from "react";
 import { APIResponseContext } from "../Providers/APIContext";
 import BlueTick from "./BlueTick";
 import TweetThread from "./TweetThread";
+import Thread from "./Thread";
 
 function TweetList({ tweetList, likeTweet, dislikeTweet }) {
-  const updateTweetLikes = (event, index) => {
+  const updateTweetLikes = (event, tweetID) => {
     if (event.target.parentNode.classList.contains("isLiked")) {
       event.target.parentNode.classList.remove("isLiked");
-      dislikeTweet(index);
+      dislikeTweet(tweetID);
     } else {
-      likeTweet(index);
+      likeTweet(tweetID);
       event.target.parentNode.classList.add("isLiked");
     }
   };
 
   if (tweetList != null) {
-    return tweetList.map((tweetThread) => {
-      console.log(tweetThread);
+    return tweetList.map((tweetThread, index) => {
+      const threadTweetsCount = tweetThread.length;
       return (
-        <div className="tweetThreadOuter">
-          <TweetThread tweetThread={tweetThread}></TweetThread>
+        <div className="tweetThreadOuter" id={index} key={index}>
+          <TweetThread
+            tweetThread={tweetThread}
+            tweetList={tweetList}
+            likeTweet={likeTweet}
+            dislikeTweet={dislikeTweet}
+            updateTweetLikes={updateTweetLikes}
+            threadIndex={index}
+            threadTweetsCount={threadTweetsCount}
+          ></TweetThread>
         </div>
       );
     });

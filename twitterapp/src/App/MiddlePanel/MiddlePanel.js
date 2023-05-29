@@ -33,17 +33,21 @@ function MiddlePanel() {
         setTweetList(tweetList => [newTweet, ...tweetList]);
     });
 
-    const likeTweet = (index) => {
+    const likeTweet = (tweetID) => {
+        const [threadID,tweetNo] = tweetID.split('-');
+        console.log(threadID+"&&"+tweetNo);
         setTweetList(prevTweets => {
             const newTweets = [...prevTweets];
-            newTweets[index][0] = { ...newTweets[index][0], likes: newTweets[index][0].likes + 1, likesFormatted: format(newTweets[index][0].likes + 1) };
+            newTweets[threadID][tweetNo] = { ...newTweets[threadID][tweetNo], likes: newTweets[threadID][tweetNo].likes + 1, likesFormatted: format(newTweets[threadID][tweetNo].likes + 1) };
             return newTweets;
         });
     }
-    const dislikeTweet = (index) => {
+    const dislikeTweet = (tweetID) => {
+        const [threadID,tweetNo] = tweetID.split('-');
+        console.log(threadID+"&&"+tweetNo);
         setTweetList(prevTweets => {
             const newTweets = [...prevTweets];
-            newTweets[index][0] = { ...newTweets[index][0], likes: newTweets[index][0].likes - 1, likesFormatted: format(newTweets[index][0].likes - 1) };
+            newTweets[threadID][tweetNo] = { ...newTweets[threadID][tweetNo], likes: newTweets[threadID][tweetNo].likes - 1, likesFormatted: format(newTweets[threadID][tweetNo].likes - 1) };
             return newTweets;
         });
     }

@@ -4,13 +4,15 @@ import likesIcon from "../../assets/likesIcon.svg";
 import commentsIcon from "../../assets/commentIcon.svg";
 import retweetIcon from "../../assets/retweetIcon.svg";
 import tweetReachIcon from "../../assets/tweetReachIcon.svg";
+import ReplyingTo from "./ReplyingTo";
+import Thread from "./Thread";
 
-function TweetThread({ tweetThread }) {
+function TweetThread({ tweetThread, likeTweet, dislikeTweet, updateTweetLikes, threadIndex, threadTweetsCount }) {
   if (tweetThread != null) {
-    console.log(tweetThread);
     return tweetThread.map((tweet, index) => {
+        const tweetID = threadIndex+'-'+index;
       return (
-        <div className="tweetList" id={index} key={index}>
+        <div className="tweetList" id={tweetID} key={index}>
           <ProfileLogo
             userLogo={tweet.user.imageData.url}
             userAltText={tweet.user.imageData.alt}
@@ -26,6 +28,7 @@ function TweetThread({ tweetThread }) {
               </div>
               <div className="tweetDateTime">{tweet.tweetTime}</div>
             </div>
+            <ReplyingTo index={index} tweetOwner={tweet.user.userId}></ReplyingTo>
             <div className="tweetBody">{tweet.textArea}</div>
             <div className="tweetStats">
               <div className="commentCount">
@@ -39,7 +42,7 @@ function TweetThread({ tweetThread }) {
               <div
                 className="likesCount"
                 onClick={(event) => {
-                  updateTweetLikes(event, index);
+                  updateTweetLikes(event, tweetID);
                 }}
               >
                 <img src={likesIcon} className="tweetStatIcon"></img>
@@ -51,6 +54,7 @@ function TweetThread({ tweetThread }) {
               </div>
             </div>
           </div>
+          <Thread threadTweetsCount={threadTweetsCount} tweetNo={index}></Thread>
         </div>
       );
     });

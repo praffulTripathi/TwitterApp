@@ -24,7 +24,7 @@
     width: 100%;
     top:0;
     position: sticky;
-    z-index:1000;
+    z-index:1001;
     border-bottom: 1px solid var(--twitter-grey);
 }
 
@@ -90,9 +90,6 @@
     width: 100%;
 }
 
-
-
-
 .composeTweet {
     min-height: 120px;
     display: flex;
@@ -106,6 +103,7 @@
     margin-left: 15px;
     border-radius: 50%;
     cursor: pointer;
+    z-index:1000;
 }
 
 .profileLogo.left{
@@ -179,10 +177,31 @@
 }
 
 .tweetThreadOuter{
+    width: 100%;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
     border-bottom: 1px solid var(--twitter-grey);
 }
 
+.threadDisplay{
+    width:2px;
+    position: absolute;
+    height: 100%;
+    left: 37.5px;
+    background-color: var(--twitter-grey);
+    z-index:1;
+}
+.noTop{
+    margin-top:65px;
+}
+.noBottom{
+    height: 65px;
+}
+
 .tweetList {
+    position:relative;
     width: 100%;
     min-height: 120px;
     display: flex;
@@ -252,6 +271,22 @@
     height: 20px;
     width: 20px;
 }
+.replyingTo{
+    color: var(--twitter-grey);
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.replyingText, .tweetOwner{
+    font-size: var(--root-14px-text);
+    margin-right: 4px;
+}
+.tweetOwner{
+    color: var(--twitter-blue);
+}
+
 
 .tweetBody {
     font-size: var(--root-14px-text);
@@ -271,6 +306,7 @@
     font-size: var(--root-12px-text);
 }
 
+
 .isLiked>* {
     color: red;
     fill: red;
@@ -288,6 +324,9 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+.likesCount > *:hover{
+    color: red;
 }
 
 .commentCount>*,
