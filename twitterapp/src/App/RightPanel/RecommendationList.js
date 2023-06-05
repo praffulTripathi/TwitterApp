@@ -28,7 +28,7 @@ function RecommendationList({ followData }) {
           <div className="whoToFollow rightPanelColor">
             <div className="profileName rightPanelColor">
               <div className="name">{user.userName}</div>
-              <BlueTick blueTick={user.blueTick}></BlueTick>
+              <BlueTick blueTick={user.blueTick} bkgColor={"lightGrey"}></BlueTick>
             </div>
             <div className="userNameCard rightPanelColor">{user.userId}</div>
           </div>

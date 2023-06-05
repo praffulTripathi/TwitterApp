@@ -8,7 +8,7 @@ function StickyBar() {
                 <div className="yourTweets centerText maxHeight">
                     <div className="textWithPill">
                         <span className="textDesc">For You</span>
-                        <div className="bottomPill">
+                        <div className="bottomPill isActive">
                         </div>
                     </div>
                 </div>

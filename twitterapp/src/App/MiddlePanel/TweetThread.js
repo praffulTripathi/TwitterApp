@@ -21,7 +21,7 @@ function TweetThread({ tweetThread, likeTweet, dislikeTweet, updateTweetLikes, t
           <div className="tweetBodyAndStats">
             <div className="userDetailsAndTime">
               <div className="tweetUserProfileName">{tweet.user.userName}</div>
-              <BlueTick blueTick={tweet.user.blueTick}></BlueTick>
+              <BlueTick blueTick={tweet.user.blueTick} bkgColor={"black"}></BlueTick>
               <div className="tweetUserUserName">
                 <div className="userName">@{tweet.user.userId}</div>
                 <div className="dot">.</div>
