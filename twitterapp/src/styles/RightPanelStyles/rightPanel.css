@@ -166,6 +166,7 @@
     color: var(--twitter-blue);
     font-weight: 600;
     background-color: var(--twitter-list-dark-bkg);
+    cursor:pointer;
 }
 
 @media only screen and (max-width: 768px) {
