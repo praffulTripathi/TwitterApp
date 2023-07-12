@@ -21,8 +21,8 @@ function UserInfo() {
         />
         <div className="userDetails">
           <div className="profileName">
-            <div className="name">{userInfo.userName}</div>            
-            <BlueTick blueTick={userInfo.blueTick}></BlueTick>
+            <div className="name">{userInfo.userName}</div>
+            <BlueTick blueTick={userInfo.blueTick} bkgColor={"black"}></BlueTick>
           </div>
           <div className="userNameCard">@{userInfo.userId}</div>
         </div>

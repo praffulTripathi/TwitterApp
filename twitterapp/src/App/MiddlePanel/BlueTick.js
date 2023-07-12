@@ -1,9 +1,9 @@
 import VerifiedUserSVG from '../../assets/Twitter_Verified_Badge.svg.png'
-function BlueTick({ blueTick }) {
+function BlueTick({ blueTick,bkgColor }) {
   if (blueTick == true)
     return (
       <div className="blueTick">
-        <img className="verifiedUserIcon" src={VerifiedUserSVG}></img>
+        <img className={`verifiedUserIcon ${bkgColor}`} src={VerifiedUserSVG}></img>
       </div>
     );
 }

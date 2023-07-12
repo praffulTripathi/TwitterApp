@@ -161,6 +161,9 @@
 .hashTags{
     display: flex;
 }
+.verifiedUserIcon.lightGrey{
+    background-color: var(--twitter-list-dark-bkg);
+}
 
 .hashTag{
     color: var(--twitter-blue);

@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState, useContext } from 'react';
+import { createContext, useEffect, useState, useContext, Suspense } from 'react';
 import './App.css';
 import './styles/GlobalStyles/root.css'
 import './styles/LeftPanelStyles/leftPanel.css'
@@ -12,13 +12,14 @@ import { TweetListProvider } from './App/Providers/TweetListContext';
 
 
 function App() {
-  
   return (
     <div className="App">
       <LeftPanel />
+
       <TweetListProvider>
         <MiddlePanel />
       </TweetListProvider>
+
       <RightPanel />
     </div>
   )

@@ -6,7 +6,6 @@ import FollowRecommendation from "./FollowRecommendation";
 
 
 function RightPanel() {
-
     return (
         <div className="rightPanel">
             <SearchPanel />

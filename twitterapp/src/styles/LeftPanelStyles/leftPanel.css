@@ -1,6 +1,3 @@
-/* a:hover{
-    background-color: #2b2929;
-} */
 .leftPanel {
   position: sticky;
   top: 0px;
@@ -15,6 +12,12 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
+}
+
+.LeftPanelListSpinner{
+  height: 50px;
+  min-width: 270px;
+  color: yellow;
 }
 
 .left-panel-list {
